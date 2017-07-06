@@ -12,7 +12,7 @@ On your dokku server:
 
 ### dokku >= 0.4.0
 ```sh
-sudo dokku plugin:install https://github.com/F4-Group/dokku-apt
+sudo dokku plugin:install https://github.com/jeanfbrito/dokku-apt
 ```
 
 ### dokku < 0.4.0
@@ -70,12 +70,10 @@ your-package-0_0.0.1.deb
 
 ## Specifying package versions
 
-You can specify a package version with '=1.2.3' after the package name. 
+You can specify a package version with '=1.2.3' after the package name.
 
 Example:
 
 ```
 libgd2-dev=2.1.1
 ```
-
-
