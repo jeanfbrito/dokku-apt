@@ -9,6 +9,13 @@ DIR=/app
 
 COMMAND=$(cat <<EOF
 export DEBIAN_FRONTEND=noninteractive
+if [ -f $DIR/apt-keys ]; then
+    cat "$DIR/apt-keys" | while read key; do
+        if [ -n "\$key" ]; then
+            wget -q -O - "\$key" | apt-key add -
+        fi
+    done
+fi
 if [ -f $DIR/apt-repositories ]; then
     apt-get update
     apt-get install -y software-properties-common apt-transport-https
